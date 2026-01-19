@@ -1,5 +1,6 @@
-import Link from 'next/link'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,13 +9,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold">K</span>
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="h-8 w-auto flex items-center">
+                <Image
+                  src="/initiallogofinal.png" // apni horizontal navbar wali PNG ka exact path
+                  alt="Kodesparc Logo"
+                  width={120} // navbar ke liye perfect width
+                  height={40} // maintain aspect ratio
+                  className="object-contain"
+                />
               </div>
-              <span className="font-bold text-foreground">Kodesparc</span>
-            </div>
-            <p className="text-sm text-foreground/60">
+            </Link>
+            <p className="text-sm text-foreground/60 mt-5">
               Igniting ideas into digital reality.
             </p>
           </div>
@@ -24,17 +30,26 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-foreground/60 hover:text-primary transition-colors">
+                <Link
+                  href="/about"
+                  className="text-sm text-foreground/60 hover:text-primary transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-sm text-foreground/60 hover:text-primary transition-colors">
+                <Link
+                  href="/projects"
+                  className="text-sm text-foreground/60 hover:text-primary transition-colors"
+                >
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-foreground/60 hover:text-primary transition-colors">
+                <Link
+                  href="/services"
+                  className="text-sm text-foreground/60 hover:text-primary transition-colors"
+                >
                   Services
                 </Link>
               </li>
@@ -92,10 +107,16 @@ export function Footer() {
               © 2024 Kodesparc. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-sm text-foreground/50 hover:text-foreground transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-sm text-foreground/50 hover:text-foreground transition-colors"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -103,5 +124,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

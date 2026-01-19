@@ -8,6 +8,7 @@ import { MiniProjectCard } from '@/components/mini-project-card'
 import { SectionHeader } from '@/components/section-header'
 import { ArrowRight, Code, Zap, Globe, Smartphone, Database, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { DeveloperCard } from '@/components/developer-card'
 
 export default function Home() {
   const [particles, setParticles] = useState<Array<{ x: number; y: number; id: number }>>([])
@@ -51,7 +52,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <div className="relative z-10 max-w-4xl mx-auto text-center mb-8">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
               <Zap size={16} className="text-accent" />
@@ -137,7 +138,7 @@ export default function Home() {
         </section>
 
         {/* About Overview Section */}
-        <section className="py-20 px-4 border-t border-white/10">
+        <section className="py-20 px-4 border-t border-white/10 ">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-5 gap-8 items-center">
               {/* Icon */}
@@ -257,6 +258,44 @@ export default function Home() {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>
+          </div>
+        </section>
+                {/* Developers Section */}
+        <section className="py-20 px-4 border-t border-white/10">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeader
+              title="Meet Our Team"
+              subtitle="Talented developers crafting innovative solutions with deep technical expertise"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <DeveloperCard
+                name="Talha Bin Suhail"
+                avatar="TB"
+                experience="5+ Years Experience"
+                skills={['ASP.NET', '.NET Core', 'Next.js', 'Flutter', 'PostgreSQL']}
+                highlight="Full-stack developer specializing in backend systems, cross-platform mobile apps, and cloud integration with modern cloud solutions."
+                profileUrl="/developers/talha-bin-suhail"
+              />
+              <DeveloperCard
+                name="Ammar Kamran"
+                avatar="AK"
+                experience="4+ Years Experience"
+                skills={['AWS', 'Azure', 'Next.js', 'React', 'MongoDB']}
+                highlight="Cloud architect and full-stack engineer with deep AWS expertise, specializing in scalable SaaS platforms and CI/CD pipelines."
+                profileUrl="/developers/ammar-kamran"
+              />
+            </div>
+
+            {/* <div className="text-center">
+              <Link
+                href="/developers"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-primary text-foreground font-semibold hover:bg-primary/10 transition-all duration-300 group"
+              >
+                View All Team Members
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div> */}
           </div>
         </section>
       </main>

@@ -23,18 +23,15 @@ export function Navbar() {
           
 {/* Logo */}
 <Link href="/" className="flex items-center gap-2 group">
-  <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+  <div className="h-8 w-auto flex items-center">
     <Image
-      src="initiallogo.png" 
+      src="/initiallogofinal.png"  // apni horizontal navbar wali PNG ka exact path
       alt="Kodesparc Logo"
-      width={32} // adjust as needed
-      height={32} // adjust as needed
+      width={120}            // navbar ke liye perfect width
+      height={40}            // maintain aspect ratio
       className="object-contain"
     />
   </div>
-  <span className="font-bold text-lg hidden sm:inline bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-    Kodesparc
-  </span>
 </Link>
 
           {/* Desktop Menu */}
