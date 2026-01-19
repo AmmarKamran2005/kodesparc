@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     userScalable: true,
   },
   icons: {
-    icon: '/icon.svg',
+    icon: '/icon.ico',
     apple: '/apple-icon.png',
   },
-  keywords: 'web development, mobile apps, API development, SaaS, cloud integration, Next.js, React, Flutter',
+  keywords: 'web development, mobile apps, API development, SaaS, cloud integration, Next.js, React, Flutter, .net, asp.net',
   authors: [{ name: 'Kodesparc' }],
   openGraph: {
     type: 'website',

@@ -77,19 +77,19 @@ const handleSubmit = async (e: React.FormEvent) => {
                       {
                         icon: Mail,
                         title: 'Email',
-                        value: 'hello@kodesparc.com',
-                        link: 'mailto:hello@kodesparc.com',
+                        value: 'kodesparc@gmail.com',
+                        link: 'mailto:kodesparc@gmail.com',
                       },
                       {
                         icon: Phone,
                         title: 'WhatsApp',
-                        value: '+1 (555) 123-4567',
-                        link: 'https://wa.me/15551234567',
+                        value: '+92 336 2005245 | +92 332 0264699 ',
+                        link: 'https://wa.me/+923362005245',
                       },
                       {
                         icon: MapPin,
                         title: 'Location',
-                        value: 'San Francisco, CA',
+                        value: 'Karachi, PK',
                         link: '#',
                       },
                     ].map((item, index) => (
