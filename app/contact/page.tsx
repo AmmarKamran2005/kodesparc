@@ -83,7 +83,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       {
                         icon: Phone,
                         title: 'WhatsApp',
-                        value: '+92 336 2005245 | +92 332 0264699 ',
+                        value: '+92 336 2005245 | +92 312 3670670',
                         link: 'https://wa.me/+923362005245',
                       },
                       {

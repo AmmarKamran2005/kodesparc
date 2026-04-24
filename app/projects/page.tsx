@@ -5,14 +5,39 @@ import { Footer } from '@/components/footer'
 import { ExternalLink, Github } from 'lucide-react'
 import Link from 'next/link'
 
-const projects = [
+type Project = {
+  name: string
+  description: string
+  techs: string[]
+  links: { live: string; github?: string }
+  features: string[]
+}
+
+const projects: Project[] = [
+  {
+    name: 'Medocs.ai',
+    description: 'AI-powered medical documentation platform that streamlines clinical workflows and automates patient record generation for healthcare professionals. Includes cross-platform mobile apps.',
+    techs: ['ASP.NET Core', 'C#', 'SQL Server', 'Ionic', 'Angular'],
+    links: {
+      live: 'https://medocs.ai',
+    },
+    features: ['AI Documentation', 'Clinical Workflows', 'HIPAA Compliant', 'Mobile App'],
+  },
+  {
+    name: 'Rehabdox',
+    description: 'Comprehensive rehabilitation management platform for clinics and therapists to manage patient care, treatment plans, and progress tracking. Includes cross-platform mobile apps.',
+    techs: ['ASP.NET Core', 'C#', 'SQL Server', 'Ionic', 'Angular'],
+    links: {
+      live: 'https://rehabdox.com',
+    },
+    features: ['Patient Management', 'Treatment Plans', 'Progress Tracking', 'Mobile App'],
+  },
   {
     name: 'Hotelire',
     description: 'Full hotel booking system with owner and admin dashboards. Complete property management solution with real-time analytics.',
     techs: ['Next.js', 'Stripe', 'Twilio', 'Firebase', 'PostgreSQL'],
     links: {
       live: 'https://hotelire.ca',
-      github: '#',
     },
     features: ['Booking System', 'Payment Processing', 'SMS Notifications', 'Analytics'],
   },
@@ -22,7 +47,6 @@ const projects = [
     techs: ['Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
     links: {
       live: 'https://hotelire.ca/owner',
-      github: '#',
     },
     features: ['Property Management', 'Revenue Analytics', 'Guest Management', 'Booking Calendar'],
   },
@@ -32,7 +56,6 @@ const projects = [
     techs: ['Next.js', 'TypeScript', 'PostgreSQL', 'Shadcn/UI'],
     links: {
       live: 'https://hotelire.ca/admin',
-      github: '#',
     },
     features: ['CMS System', 'User Management', 'Reporting', 'Moderation'],
   },
@@ -113,14 +136,16 @@ export default function Projects() {
                       >
                         <ExternalLink size={20} />
                       </a>
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3 rounded-lg bg-primary text-primary-foreground hover:shadow-lg transition-all duration-300"
-                      >
-                        <Github size={20} />
-                      </a>
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 rounded-lg bg-primary text-primary-foreground hover:shadow-lg transition-all duration-300"
+                        >
+                          <Github size={20} />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -172,15 +197,17 @@ export default function Projects() {
                         View Live
                         <ExternalLink size={16} />
                       </a>
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 px-4 py-2 rounded-lg border-2 border-primary/50 text-foreground font-medium hover:bg-primary/10 transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
-                      >
-                        GitHub
-                        <Github size={16} />
-                      </a>
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-4 py-2 rounded-lg border-2 border-primary/50 text-foreground font-medium hover:bg-primary/10 transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
+                        >
+                          GitHub
+                          <Github size={16} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

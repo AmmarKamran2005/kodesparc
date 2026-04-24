@@ -216,6 +216,22 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <MiniProjectCard
+                name="Medocs.ai"
+                description="AI-powered medical documentation platform that streamlines clinical workflows and automates patient record generation for healthcare professionals."
+                techs={['ASP.NET Core', 'C#', 'Ionic', 'Angular']}
+                links={{
+                  live: 'https://medocs.ai',
+                }}
+              />
+              <MiniProjectCard
+                name="Rehabdox"
+                description="Comprehensive rehabilitation management platform for clinics and therapists to manage patient care, treatment plans, and progress tracking."
+                techs={['ASP.NET Core', 'C#', 'Ionic', 'Angular']}
+                links={{
+                  live: 'https://rehabdox.com',
+                }}
+              />
+              <MiniProjectCard
                 name="Hotelire"
                 description="Full hotel booking system with owner and admin dashboards. Complete property management solution with real-time analytics."
                 techs={['Next.js', 'Stripe', 'Twilio', 'Firebase']}
