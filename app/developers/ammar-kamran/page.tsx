@@ -1,18 +1,63 @@
 import Link from 'next/link'
+import Script from 'next/script'
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { SkillBadge } from '@/components/skill-badge'
 import { ArrowLeft } from 'lucide-react'
 
-export const metadata = {
-  title: 'Ammar Kamran - Cloud Architect & Full Stack Developer | Kodesparc',
+export const metadata: Metadata = {
+  title: 'Ammar Kamran — Cloud Architect & Full Stack Developer',
   description:
-    'Cloud architect and full-stack developer with 4+ years in AWS, Azure, Next.js, React, and SaaS platforms. Certified AWS Solution Architect. Expert in CI/CD pipelines and scalable infrastructure.',
+    'Ammar Kamran is a cloud architect and full-stack developer at Kodesparc with 4+ years in AWS, Azure, Next.js, React, and MongoDB. Certified AWS Solutions Architect specializing in scalable SaaS and CI/CD pipelines.',
+  keywords: [
+    'Ammar Kamran',
+    'cloud architect',
+    'AWS developer',
+    'Azure developer',
+    'Next.js developer',
+    'React developer',
+    'MongoDB',
+    'SaaS engineer',
+    'Kodesparc team',
+  ],
+  alternates: { canonical: '/developers/ammar-kamran' },
+  openGraph: {
+    title: 'Ammar Kamran — Cloud Architect at Kodesparc',
+    description:
+      'Cloud architect and full-stack engineer specializing in AWS, Azure, Next.js, React, and scalable SaaS.',
+    url: '/developers/ammar-kamran',
+    type: 'profile',
+    images: [{ url: '/Ksparc_logo.png', width: 1200, height: 630, alt: 'Ammar Kamran — Kodesparc' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ammar Kamran — Cloud Architect at Kodesparc',
+    description:
+      'Cloud architect and full-stack engineer: AWS, Azure, Next.js, React, MongoDB.',
+    images: ['/Ksparc_logo.png'],
+  },
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ammar Kamran',
+  jobTitle: 'Cloud Architect & Full Stack Developer',
+  worksFor: { '@type': 'Organization', name: 'Kodesparc', url: 'https://kodesparc.com' },
+  url: 'https://kodesparc.com/developers/ammar-kamran',
+  knowsAbout: ['AWS', 'Azure', 'Next.js', 'React', 'MongoDB', 'SaaS architecture', 'CI/CD'],
 }
 
 export default function AmmarDeveloperPage() {
   return (
     <>
+      <Script
+        id="ld-person-ammar"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <Navbar />
       <main className="min-h-screen bg-background">
         {/* Header */}

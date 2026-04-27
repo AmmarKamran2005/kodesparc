@@ -1,18 +1,62 @@
 import Link from 'next/link'
+import Script from 'next/script'
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { SkillBadge } from '@/components/skill-badge'
 import { ArrowLeft } from 'lucide-react'
 
-export const metadata = {
-  title: 'Talha Bin Suhail - Full Stack Developer | Kodesparc',
+export const metadata: Metadata = {
+  title: 'Talha Bin Suhail — Full Stack Developer',
   description:
-    'Full-stack developer with 4+ years specializing in .NET Core, Next.js, Flutter, and cloud solutions. Backend architecture, mobile development, and API design.',
+    'Talha Bin Suhail is a full-stack developer at Kodesparc with 5+ years of experience in ASP.NET, .NET Core, Next.js, Flutter, and PostgreSQL. Specializing in backend systems, cross-platform mobile apps, and cloud integration.',
+  keywords: [
+    'Talha Bin Suhail',
+    'full stack developer',
+    'ASP.NET developer',
+    '.NET Core developer',
+    'Next.js developer',
+    'Flutter developer',
+    'PostgreSQL',
+    'Kodesparc team',
+  ],
+  alternates: { canonical: '/developers/talha-bin-suhail' },
+  openGraph: {
+    title: 'Talha Bin Suhail — Full Stack Developer at Kodesparc',
+    description:
+      'Full-stack engineer specializing in ASP.NET, .NET Core, Next.js, Flutter, and cloud integration.',
+    url: '/developers/talha-bin-suhail',
+    type: 'profile',
+    images: [{ url: '/Ksparc_logo.png', width: 1200, height: 630, alt: 'Talha Bin Suhail — Kodesparc' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Talha Bin Suhail — Full Stack Developer at Kodesparc',
+    description:
+      'Full-stack engineer: ASP.NET, .NET Core, Next.js, Flutter, PostgreSQL.',
+    images: ['/Ksparc_logo.png'],
+  },
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Talha Bin Suhail',
+  jobTitle: 'Full Stack Developer',
+  worksFor: { '@type': 'Organization', name: 'Kodesparc', url: 'https://kodesparc.com' },
+  url: 'https://kodesparc.com/developers/talha-bin-suhail',
+  knowsAbout: ['ASP.NET', '.NET Core', 'Next.js', 'Flutter', 'PostgreSQL', 'API design', 'Cloud integration'],
 }
 
 export default function TalhaDeveloperPage() {
   return (
     <>
+      <Script
+        id="ld-person-talha"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <Navbar />
       <main className="min-h-screen bg-background">
         {/* Header */}
